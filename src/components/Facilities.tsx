@@ -55,12 +55,12 @@ export function Facilities() {
                 Vedaant Hospital is equipped with cutting-edge medical technology to ensure precise diagnosis and effective treatment. Our infrastructure is designed for maximum patient comfort and safety.
               </p>
 
-              <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100">
-                <h3 className="text-xl font-bold text-slate-900 mb-6">Accessibility & Comfort</h3>
+              <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:shadow-green-900/5 hover:border-green-100 cursor-pointer group">
+                <h3 className="text-xl font-bold text-slate-900 mb-6 transition-colors">Accessibility & Comfort</h3>
                 <ul className="space-y-4">
                   {ACCESSIBILITY.map((item, idx) => (
                     <li key={idx} className="flex items-center gap-4">
-                      <div className="bg-secondary/20 p-2.5 rounded-xl text-primary">
+                      <div className="bg-green-50 p-2.5 rounded-full text-green-600">
                         <item.icon className="w-5 h-5" />
                       </div>
                       <span className="font-semibold text-slate-700">{item.name}</span>
@@ -83,15 +83,17 @@ export function Facilities() {
                   transition={{ duration: 0.5, delay: idx * 0.1 }}
                   className={idx === 0 ? "sm:col-span-2" : ""}
                 >
-                  <Card className={`group bg-white border-slate-100 hover:border-primary/30 hover:shadow-lg transition-all duration-300 h-full overflow-hidden relative ${idx === 0 ? 'sm:flex sm:items-center' : ''}`}>
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    
+                  <Card 
+                    className={`rounded-2xl border border-gray-100 shadow-sm transition-all duration-300 ease-out group cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:shadow-green-900/5 hover:border-green-100 h-full overflow-hidden relative ${
+                      idx === 0 ? "bg-gradient-to-br from-white to-green-50/30 sm:flex sm:items-center" : "bg-white"
+                    }`}
+                  >
                     <CardContent className={`p-6 md:p-8 flex items-center gap-6 ${idx === 0 ? 'sm:flex-row' : 'flex-col sm:items-start'}`}>
-                      <div className={`shrink-0 flex items-center justify-center rounded-2xl bg-slate-50 text-slate-600 group-hover:bg-primary group-hover:text-white transition-colors duration-300 ${idx === 0 ? 'w-20 h-20' : 'w-16 h-16'}`}>
-                        <facility.icon className={idx === 0 ? 'w-10 h-10' : 'w-8 h-8'} />
+                      <div className={`shrink-0 flex items-center justify-center rounded-xl bg-gray-50 transition-colors duration-300 group-hover:bg-green-50 text-gray-500 group-hover:text-green-600 ${idx === 0 ? 'w-20 h-20' : 'w-14 h-14'}`}>
+                        <facility.icon className={idx === 0 ? 'w-10 h-10' : 'w-7 h-7'} />
                       </div>
                       <div className="text-center sm:text-left">
-                        <h4 className={`font-bold text-slate-900 ${idx === 0 ? 'text-2xl' : 'text-lg mt-4 sm:mt-0'}`}>
+                        <h4 className={`font-bold text-slate-900 transition-colors ${idx === 0 ? 'text-2xl' : 'text-lg mt-4 sm:mt-0'}`}>
                           {facility.name}
                         </h4>
                       </div>

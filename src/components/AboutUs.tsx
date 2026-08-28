@@ -39,11 +39,11 @@ export function AboutUs() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="relative"
+            className="relative flex flex-col md:block"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3] bg-slate-100 shadow-xl border border-slate-200 group">
+            <div className="relative w-full rounded-[2rem] overflow-hidden aspect-[4/3] bg-slate-100 shadow-xl border border-slate-200 group">
               
               {/* Slider Images with Cross-Fade */}
               {ABOUT_IMAGES.map((src, index) => (
@@ -98,25 +98,27 @@ export function AboutUs() {
             </div>
             
             {/* Overlapping small card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="absolute -bottom-10 -right-10 md:-right-12 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-xs z-30"
-            >
-              <div className="flex items-start gap-4">
-                <div className="bg-primary/10 p-3 rounded-full text-primary">
-                  <ShieldCheck className="w-8 h-8" />
+            <div className="flex justify-center md:block mt-4 md:mt-0 w-full md:w-auto pointer-events-none z-30 relative md:absolute md:-bottom-6 md:-right-6">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="bg-white p-4 md:p-6 rounded-2xl shadow-xl border border-slate-100 max-w-xs w-full md:w-auto"
+              >
+                <div className="flex items-start gap-3 md:gap-4">
+                  <div className="bg-primary/10 p-2 md:p-3 rounded-full text-primary shrink-0">
+                    <ShieldCheck className="w-6 h-6 md:w-8 md:h-8" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm md:text-base">Certified Care</h4>
+                    <p className="text-xs md:text-sm text-slate-500 mt-0.5 md:mt-1">
+                      Adhering to the highest medical and safety standards.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900">Certified Care</h4>
-                  <p className="text-sm text-slate-500 mt-1">
-                    Adhering to the highest medical and safety standards.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </motion.div>
 
           {/* Right: Content */}

@@ -116,10 +116,10 @@ export function Hero() {
             className="relative lg:h-[600px] flex items-center justify-center"
           >
             {/* Main Visual Wrapper */}
-            <div className="relative w-full max-w-md aspect-[4/5]">
+            <div className="relative w-full max-w-md flex flex-col md:block">
               
               {/* Image Container */}
-              <div className="relative w-full h-full rounded-3xl shadow-2xl overflow-hidden">
+              <div className="relative w-full aspect-[4/5] rounded-3xl shadow-2xl overflow-hidden">
                 <Image 
                   src="/hero-dr-keyur.webp" 
                   alt="Dr. Keyur - Vedaant Hospital"
@@ -131,33 +131,35 @@ export function Hero() {
               </div>
               
               {/* Floating Cards */}
-              <motion.div 
-                animate={{ y: [0, -10, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute -right-6 top-1/4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-20"
-              >
-                <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                  <Activity className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-500 font-medium">Trusted by</div>
-                  <div className="font-bold text-slate-900">10,000+ Patients</div>
-                </div>
-              </motion.div>
-              
-              <motion.div 
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                className="absolute -left-6 bottom-1/4 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 z-20"
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                  <Stethoscope className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="text-xs text-slate-500 font-medium">Expert Care</div>
-                  <div className="font-bold text-slate-900">Top Specialists</div>
-                </div>
-              </motion.div>
+              <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-0 md:block">
+                <motion.div 
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                  className="relative w-full md:w-auto md:absolute md:-bottom-8 md:-right-8 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center justify-center sm:justify-start gap-3 z-20"
+                >
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0">
+                    <Activity className="w-4 h-4 md:w-5 md:h-5" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] md:text-xs text-slate-500 font-medium">Trusted by</div>
+                    <div className="text-sm md:text-base font-bold text-slate-900 leading-tight">10,000+ Patients</div>
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                  className="relative w-full md:w-auto md:absolute md:bottom-10 md:-left-12 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center justify-center sm:justify-start gap-3 z-20"
+                >
+                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                    <Stethoscope className="w-4 h-4 md:w-5 md:h-5" />
+                  </div>
+                  <div>
+                    <div className="text-[10px] md:text-xs text-slate-500 font-medium">Expert Care</div>
+                    <div className="text-sm md:text-base font-bold text-slate-900 leading-tight">Top Specialists</div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

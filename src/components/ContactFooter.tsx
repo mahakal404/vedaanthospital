@@ -66,9 +66,11 @@ export function ContactFooter() {
                 <div>
                   <h4 className="text-white font-bold mb-1">Location</h4>
                   <p className="text-slate-400">
-                    NH 48, Beside GC Patel Petrol Pump, <br />
-                    Opposite New Mamlatdar Office, <br />
-                    Killa-pardi, Gujarat – 396125
+                    <a href="https://maps.google.com/?q=Vedaant+Hospital+Killa-pardi" target="_blank" rel="noopener noreferrer" className="hover:text-green-500 transition-colors">
+                      NH 48, Beside GC Patel Petrol Pump, <br />
+                      Opposite New Mamlatdar Office, <br />
+                      Killa-pardi, Gujarat – 396125
+                    </a>
                   </p>
                 </div>
               </div>
@@ -80,7 +82,7 @@ export function ContactFooter() {
                 <div>
                   <h4 className="text-white font-bold mb-1">Phone</h4>
                   <p className="text-slate-400 text-xl font-medium tracking-wide">
-                    <a href="tel:+916357444108" className="hover:text-primary transition-colors">+91 63574 44108</a>
+                    <a href="tel:+916357444108" className="hover:text-green-500 transition-colors">+91 63574 44108</a>
                   </p>
                 </div>
               </div>
