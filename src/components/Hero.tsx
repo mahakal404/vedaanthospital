@@ -5,6 +5,7 @@ import { ArrowRight, PhoneCall, HeartPulse, Stethoscope, Activity, ShieldPlus } 
 import { Button, buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const BADGES = [
   { text: "48-Bed Multi-Speciality", icon: HeartPulse },
@@ -28,91 +29,76 @@ export function Hero() {
           
           {/* Content */}
           <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="inline-block mb-4 px-4 py-1.5 rounded-full bg-white border border-primary/20 shadow-sm"
-            >
-              <span className="text-sm font-semibold text-primary tracking-wide">
-                Established Healthcare in Gujarat
-              </span>
-            </motion.div>
+            <ScrollReveal delay={0}>
+              <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-white border border-primary/20 shadow-sm">
+                <span className="text-sm font-semibold text-primary tracking-wide">
+                  Established Healthcare in Gujarat
+                </span>
+              </div>
+            </ScrollReveal>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight mb-6"
-            >
-              24/7 Comprehensive & Compassionate <span className="text-primary relative whitespace-nowrap">
-                Healthcare
-                <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
-                  <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" strokeWidth="3" />
-                </svg>
-              </span>
-              <br className="hidden md:block" /> in Killa-Pardi
-            </motion.h1>
+            <ScrollReveal delay={0.1}>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight mb-6">
+                24/7 Comprehensive & Compassionate <span className="text-primary relative whitespace-nowrap">
+                  Healthcare
+                  <svg className="absolute w-full h-3 -bottom-1 left-0 text-primary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
+                    <path d="M0 5 Q 50 10 100 5" fill="none" stroke="currentColor" strokeWidth="3" />
+                  </svg>
+                </span>
+                <br className="hidden md:block" /> in Killa-Pardi
+              </h1>
+            </ScrollReveal>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mb-8"
-            >
-              <p className="text-xl md:text-2xl font-serif italic text-slate-600 mb-2">
-                "Aarogyam Parmanandasya Moolam"
-              </p>
-              <p className="text-slate-500 text-sm font-medium">— Sushruta (Health is the root of supreme happiness)</p>
-            </motion.div>
+            <ScrollReveal delay={0.2}>
+              <div className="mb-8">
+                <p className="text-xl md:text-2xl font-serif italic text-slate-600 mb-2">
+                  "Aarogyam Parmanandasya Moolam"
+                </p>
+                <p className="text-slate-500 text-sm font-medium">— Sushruta (Health is the root of supreme happiness)</p>
+              </div>
+            </ScrollReveal>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 mb-10"
-            >
-              <Link 
-                href="#contact"
-                className={`${buttonVariants({ size: "lg" })} h-14 px-8 text-base rounded-full shadow-xl shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1 transition-all`}
-              >
-                Book an Appointment
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-              <a 
-                href="tel:+916357444108"
-                className={`${buttonVariants({ variant: "outline", size: "lg" })} h-14 px-8 text-base rounded-full border-2 hover:bg-slate-50 group`}
-              >
-                <PhoneCall className="mr-2 w-5 h-5 text-destructive group-hover:animate-pulse" />
-                Emergency Help
-              </a>
-            </motion.div>
+            <ScrollReveal delay={0.3}>
+              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+                <Link 
+                  href="#contact"
+                  className={`${buttonVariants({ size: "lg" })} h-14 px-8 text-base rounded-full shadow-xl shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-1 transition-all`}
+                >
+                  Book an Appointment
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Link>
+                <a 
+                  href="tel:+916357444108"
+                  className={`${buttonVariants({ variant: "outline", size: "lg" })} h-14 px-8 text-base rounded-full border-2 hover:bg-slate-50 group`}
+                >
+                  <PhoneCall className="mr-2 w-5 h-5 text-destructive group-hover:animate-pulse" />
+                  Emergency Help
+                </a>
+              </div>
+            </ScrollReveal>
 
             {/* Badges */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-4"
-            >
-              {BADGES.map((badge, idx) => (
-                <div key={idx} className="flex flex-col items-center sm:items-start text-center sm:text-left">
-                  <div className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center mb-3 text-primary border border-slate-100">
-                    <badge.icon className="w-5 h-5" />
+            <ScrollReveal delay={0.4}>
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {BADGES.map((badge, idx) => (
+                  <div key={idx} className="flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <div className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center mb-3 text-primary border border-slate-100">
+                      <badge.icon className="w-5 h-5" />
+                    </div>
+                    <span className="text-xs font-bold text-slate-700 leading-tight">
+                      {badge.text}
+                    </span>
                   </div>
-                  <span className="text-xs font-bold text-slate-700 leading-tight">
-                    {badge.text}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
+                ))}
+              </div>
+            </ScrollReveal>
           </div>
 
           {/* Image/Visual Graphic */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
             className="relative lg:h-[600px] flex items-center justify-center"
           >
             {/* Main Visual Wrapper */}
@@ -133,31 +119,45 @@ export function Hero() {
               {/* Floating Cards */}
               <div className="flex flex-col sm:flex-row gap-3 mt-4 md:mt-0 md:block">
                 <motion.div 
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                  className="relative w-full md:w-auto md:absolute md:-bottom-8 md:-right-8 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center justify-center sm:justify-start gap-3 z-20"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15, delay: 0.8 }}
+                  className="relative w-full md:w-auto md:absolute md:-bottom-8 md:-right-8 z-20"
                 >
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0">
-                    <Activity className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] md:text-xs text-slate-500 font-medium">Trusted by</div>
-                    <div className="text-sm md:text-base font-bold text-slate-900 leading-tight">10,000+ Patients</div>
-                  </div>
+                  <motion.div 
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 1 }}
+                    className="bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center justify-center sm:justify-start gap-3"
+                  >
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600 shrink-0">
+                      <Activity className="w-4 h-4 md:w-5 md:h-5" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] md:text-xs text-slate-500 font-medium">Trusted by</div>
+                      <div className="text-sm md:text-base font-bold text-slate-900 leading-tight">10,000+ Patients</div>
+                    </div>
+                  </motion.div>
                 </motion.div>
                 
                 <motion.div 
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                  className="relative w-full md:w-auto md:absolute md:bottom-10 md:-left-12 bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center justify-center sm:justify-start gap-3 z-20"
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ type: "spring", stiffness: 200, damping: 15, delay: 1 }}
+                  className="relative w-full md:w-auto md:absolute md:bottom-10 md:-left-12 z-20"
                 >
-                  <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-                    <Stethoscope className="w-4 h-4 md:w-5 md:h-5" />
-                  </div>
-                  <div>
-                    <div className="text-[10px] md:text-xs text-slate-500 font-medium">Expert Care</div>
-                    <div className="text-sm md:text-base font-bold text-slate-900 leading-tight">Top Specialists</div>
-                  </div>
+                  <motion.div 
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1.2 }}
+                    className="bg-white p-3 md:p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center justify-center sm:justify-start gap-3"
+                  >
+                    <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
+                      <Stethoscope className="w-4 h-4 md:w-5 md:h-5" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] md:text-xs text-slate-500 font-medium">Expert Care</div>
+                      <div className="text-sm md:text-base font-bold text-slate-900 leading-tight">Top Specialists</div>
+                    </div>
+                  </motion.div>
                 </motion.div>
               </div>
             </div>

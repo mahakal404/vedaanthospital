@@ -12,6 +12,7 @@ import {
   Car
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { ScrollReveal } from "@/components/animations/ScrollReveal";
 
 const FACILITIES = [
   { name: "48-Bed Unit", icon: BedDouble },
@@ -39,49 +40,49 @@ export function Facilities() {
           
           {/* Left: Text & Accessibility */}
           <div className="lg:col-span-5">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <ScrollReveal delay={0}>
               <div className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
                 <span className="text-sm font-bold text-primary">Infrastructure</span>
               </div>
+            </ScrollReveal>
+            
+            <ScrollReveal delay={0.1}>
               <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6">
                 State-of-the-Art Medical Facilities
               </h2>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.2}>
               <p className="text-lg text-slate-600 mb-10 leading-relaxed">
                 Vedaant Hospital is equipped with cutting-edge medical technology to ensure precise diagnosis and effective treatment. Our infrastructure is designed for maximum patient comfort and safety.
               </p>
+            </ScrollReveal>
 
-              <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:shadow-green-900/5 hover:border-green-100 cursor-pointer group">
-                <h3 className="text-xl font-bold text-slate-900 mb-6 transition-colors">Accessibility & Comfort</h3>
-                <ul className="space-y-4">
-                  {ACCESSIBILITY.map((item, idx) => (
-                    <li key={idx} className="flex items-center gap-4">
-                      <div className="bg-green-50 p-2.5 rounded-full text-green-600">
-                        <item.icon className="w-5 h-5" />
-                      </div>
-                      <span className="font-semibold text-slate-700">{item.name}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </motion.div>
+              <ScrollReveal delay={0.3}>
+                <div className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:shadow-green-900/5 hover:border-green-100 cursor-pointer group">
+                  <h3 className="text-xl font-bold text-slate-900 mb-6 transition-colors">Accessibility & Comfort</h3>
+                  <ul className="space-y-4">
+                    {ACCESSIBILITY.map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-4">
+                        <div className="bg-green-50 p-2.5 rounded-full text-green-600">
+                          <item.icon className="w-5 h-5" />
+                        </div>
+                        <span className="font-semibold text-slate-700">{item.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </ScrollReveal>
           </div>
 
           {/* Right: Grid of Facilities */}
           <div className="lg:col-span-7">
             <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
               {FACILITIES.map((facility, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className={idx === 0 ? "sm:col-span-2" : ""}
+                <ScrollReveal 
+                  key={idx} 
+                  delay={0.3 + (idx * 0.15)} 
+                  className={idx === 0 ? "sm:col-span-2 h-full" : "h-full"}
                 >
                   <Card 
                     className={`rounded-2xl border border-gray-100 shadow-sm transition-all duration-300 ease-out group cursor-pointer hover:-translate-y-1.5 hover:shadow-xl hover:shadow-green-900/5 hover:border-green-100 h-full overflow-hidden relative ${
@@ -99,7 +100,7 @@ export function Facilities() {
                       </div>
                     </CardContent>
                   </Card>
-                </motion.div>
+                </ScrollReveal>
               ))}
             </div>
           </div>
